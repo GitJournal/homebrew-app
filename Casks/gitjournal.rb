@@ -8,18 +8,16 @@ cask "gitjournal" do
   desc "Mobile first notes integrated with Git"
   homepage "https://gitjournal.io/"
 
-  # livecheck do
-  # FIXME: Fix this url!
-  #  url "https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json"
-  #  regex(%r{/flutter[._-]macos[._-]v?(\d+(?:\.\d+)+)[._-]stable\.zip}i)
-  # end
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   app "GitJournal.app"
-  # container type:dmg
-end
 
-# FIXME: depends_on arch: [:x86_64] ?
-#
-# language "en", default: true do
-#  "en_US"
-# end
+  zap trash: [
+    "~/Library/Application Support/io.gitjournal",
+    "~/Library/Caches/io.gitjournal",
+    "~/Library/Preferences/io.gitjournal",
+  ]
+end
