@@ -15,7 +15,7 @@ cask "gitjournal" do
   #end
 
   app "GitJournal.app"
-  container type:dmg
+  # container type:dmg
 end
 
 # FIXME: depends_on arch: [:x86_64] ?
