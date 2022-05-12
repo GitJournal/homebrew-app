@@ -5,33 +5,12 @@
 class GitAutoSync < Formula
   desc ""
   homepage "https://github.com/GitJournal/homebrew-tap"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
-    url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.3.0/git-auto-sync_0.3.0_Darwin_x86_64.tar.gz"
-    sha256 "a28730f5e42493663c887ea13ae4425b154950207adaff282092d75359a533e1"
-
-    def install
-      bin.install "git-auto-sync"
-      bash_completion.install "completions/bash_autocomplete"
-      zsh_completion.install "completions/zsh_autocomplete"
-    end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the GitAutoSync
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
-      end
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.3.0/git-auto-sync_0.3.0_Linux_armv6.tar.gz"
-      sha256 "dd2b70a13126bd9e8440b859f52e832137053a047e9b77d03995a966ab6cf2ff"
+      url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.4.0/git-auto-sync_0.4.0_Darwin_arm64.tar.gz"
+      sha256 "0cf07ca0449b591e48ffc9368c803b3bdd793f48810525a07767dea3cbe8e0a3"
 
       def install
         bin.install "git-auto-sync"
@@ -40,8 +19,31 @@ class GitAutoSync < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.3.0/git-auto-sync_0.3.0_Linux_x86_64.tar.gz"
-      sha256 "0aa13c43c450d1fdbd88e9c1575f1fcf0c6f4a33b7e5b50d562ac73984c646c1"
+      url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.4.0/git-auto-sync_0.4.0_Darwin_x86_64.tar.gz"
+      sha256 "49af3b04b721c8642a4f30924cd91fdd1bb7146e97d20fcaf4b2d2cf7fa320d6"
+
+      def install
+        bin.install "git-auto-sync"
+        bash_completion.install "completions/bash_autocomplete"
+        zsh_completion.install "completions/zsh_autocomplete"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.4.0/git-auto-sync_0.4.0_Linux_x86_64.tar.gz"
+      sha256 "dc395f52584681a37a5f37d9d179eb3154a3189e1dd4d6c60cc4ab10f221df79"
+
+      def install
+        bin.install "git-auto-sync"
+        bash_completion.install "completions/bash_autocomplete"
+        zsh_completion.install "completions/zsh_autocomplete"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.4.0/git-auto-sync_0.4.0_Linux_armv6.tar.gz"
+      sha256 "46cfca54be858575640e25e3a847339b770d44b286378306fbddb425353b920f"
 
       def install
         bin.install "git-auto-sync"
@@ -50,8 +52,8 @@ class GitAutoSync < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.3.0/git-auto-sync_0.3.0_Linux_arm64.tar.gz"
-      sha256 "87227e817602a18103953deaf76a803c32a3c057b8b3e9a742e034ac2397a9c3"
+      url "https://github.com/GitJournal/git-auto-sync/releases/download/v0.4.0/git-auto-sync_0.4.0_Linux_arm64.tar.gz"
+      sha256 "61cb9098e34e8bf7d88868a4f5b6df4981cd7ff3331013bb9575d51ced436b04"
 
       def install
         bin.install "git-auto-sync"
