@@ -10,7 +10,7 @@ class GitAutoSync < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/GitJournal/git-auto-sync/releases/download/v1.2/git-auto-sync_1.2_Darwin_x86_64.tar.gz"
-      sha256 "baf0ab30a71ab0c8c21fe9297e33e30fa12d68f78da6e1bb83ccd7c738203b7f"
+      sha256 "18a1c4a796f50959f134f5fe7729e24129511dea52925657aafeeec4ca1efa0e"
 
       def install
         bin.install "git-auto-sync"
@@ -20,7 +20,7 @@ class GitAutoSync < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/GitJournal/git-auto-sync/releases/download/v1.2/git-auto-sync_1.2_Darwin_arm64.tar.gz"
-      sha256 "2bf6914699f0bf8f6427000e48e510fb5f2674097c8e0e17eea3522eced6a0f7"
+      sha256 "ff03840615a7f112a2df3f7ab92a4531803cf668dc7f2916f271901b348c6b3d"
 
       def install
         bin.install "git-auto-sync"
@@ -33,7 +33,7 @@ class GitAutoSync < Formula
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/GitJournal/git-auto-sync/releases/download/v1.2/git-auto-sync_1.2_Linux_armv6.tar.gz"
-      sha256 "ade4c82e454d6567255b94d9d27fb86769a3ebd74a427faf13b2423b823e4db4"
+      sha256 "d6f9e1b8aa1b33c7750567d7becfa5c1d5d490ce4bd75188d15ddedda0585749"
 
       def install
         bin.install "git-auto-sync"
@@ -43,7 +43,7 @@ class GitAutoSync < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/GitJournal/git-auto-sync/releases/download/v1.2/git-auto-sync_1.2_Linux_arm64.tar.gz"
-      sha256 "2e9e8755ef2935e5077de653fdce0a4150e9cfdf33a264395723836e7a7e0454"
+      sha256 "6448f724b4b0f1066ecebef2c958406f57ec62dae3e5653db21119720e008de1"
 
       def install
         bin.install "git-auto-sync"
@@ -53,7 +53,7 @@ class GitAutoSync < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/GitJournal/git-auto-sync/releases/download/v1.2/git-auto-sync_1.2_Linux_x86_64.tar.gz"
-      sha256 "e429a081b4345fea22ce3e189a5d00252238d798a9ed74ecfcaa6183b1a2ff0f"
+      sha256 "d1de306ad8c99ed5a58fb905616913588d5a7fc04df692c4e850ee5956b3cd2a"
 
       def install
         bin.install "git-auto-sync"
